@@ -1,10 +1,10 @@
 #!/bin/sh
 env_build () {
     yum install epel-release -y
-    yum install python-setuptools m2crypto supervisor
+    yum install -y python-setuptools m2crypto supervisor
     yum install net-tools -y
     easy_install pip
-    pip install shadowsocks
+    pip install shadowsocks -y
 }
 
 # set password
