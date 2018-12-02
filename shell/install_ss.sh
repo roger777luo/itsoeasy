@@ -48,9 +48,11 @@ firewall-cmd --zone=public --add-port=${server_port}/tcp --permanent
 
 firewall-cmd --reload
 
+systemctl enable supervisord.service
+
 systemctl start supervisord.service
 
-sleep 1
+sleep 5
 
 num=$(netstat -anplt |grep ${server_port} | grep -v grep | wc -l)
 if [ ${num} -eq 0 ];then
